@@ -1,5 +1,8 @@
-def empiler(value):
-    p.append(value)
+def empiler(value, Stack):
+    if int(pile_size) != int(len(Stack)):
+        p.append(value)
+    else:
+        print("Pile is full\n")
 
 def depiler():
     return p.pop()
@@ -26,7 +29,7 @@ def OperationChoice(operation_number):
 
     if operation_number == '1':
         operator1 = float(input("Enter a number: \n"))
-        empiler(operator1)     
+        empiler(operator1, p)     
 
     elif operation_number == '2':
         depiler()  
@@ -40,7 +43,7 @@ def OperationChoice(operation_number):
         print(Stack_Print(p))
 
 pile_size = input("Enter a number for the size of the pile: \n")
-p = list("") * int(pile_size)
+p = list() * int(pile_size)
 
 while True:
 
